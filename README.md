@@ -2,7 +2,7 @@ TibiaEditor
 ===========
 
 An application for editing items for the popular game Tibia.
-Original code was written by BlackDemon from otfans.net.
+Original code was written by Brendan ("BlackDemon" from otfans.net).
 
 ## Contributions
 
@@ -11,7 +11,7 @@ And everyone is free to contribute to this tree, if anyone does so; i'll conside
 Please use patches or github pull request or
 ```sh
    git request-pull
-``
+```
 For any of your improvements.
 
 ## Disclaimer
