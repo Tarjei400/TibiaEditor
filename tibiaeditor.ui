@@ -1,0 +1,1745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TibiaEditorClass</class>
+ <widget class="QMainWindow" name="TibiaEditorClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>767</width>
+    <height>687</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>TibiaEditor</string>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
+  <property name="dockNestingEnabled">
+   <bool>true</bool>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="centralLayout">
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QMdiArea" name="mdiArea">
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAsNeeded</enum>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>767</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <widget class="QMenu" name="menuNew">
+     <property name="title">
+      <string>New</string>
+     </property>
+     <addaction name="actionNewDat"/>
+     <addaction name="actionNewSpr"/>
+     <addaction name="actionNewPic"/>
+     <addaction name="actionNewItem"/>
+    </widget>
+    <widget class="QMenu" name="menuOpen">
+     <property name="title">
+      <string>Open</string>
+     </property>
+     <addaction name="actionOpenDat"/>
+     <addaction name="actionOpenSpr"/>
+     <addaction name="actionOpenPic"/>
+     <addaction name="actionOpenItem"/>
+    </widget>
+    <widget class="QMenu" name="menuCompile">
+     <property name="title">
+      <string>Compile</string>
+     </property>
+     <addaction name="actionCompileDat"/>
+     <addaction name="actionCompileSpr"/>
+     <addaction name="actionCompilePic"/>
+     <addaction name="actionCompileItem"/>
+    </widget>
+    <addaction name="menuNew"/>
+    <addaction name="menuOpen"/>
+    <addaction name="menuCompile"/>
+    <addaction name="separator"/>
+    <addaction name="actionFileImport"/>
+    <addaction name="actionFileExport"/>
+    <addaction name="separator"/>
+    <addaction name="actionFilePreferences"/>
+    <addaction name="separator"/>
+    <addaction name="actionFileExit"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionEditOpenItem"/>
+    <addaction name="actionEditCloseItem"/>
+    <addaction name="separator"/>
+    <addaction name="actionEditUndo"/>
+    <addaction name="actionEditRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionEditCut"/>
+    <addaction name="actionEditCopy"/>
+    <addaction name="actionEditPaste"/>
+    <addaction name="separator"/>
+    <addaction name="actionEditSelectAll"/>
+    <addaction name="actionEditDeselect"/>
+    <addaction name="separator"/>
+    <addaction name="actionEditInsert"/>
+    <addaction name="actionEditDelete"/>
+   </widget>
+   <widget class="QMenu" name="menuWindow">
+    <property name="title">
+     <string>Window</string>
+    </property>
+    <addaction name="actionWindowFullScreen"/>
+    <addaction name="separator"/>
+    <addaction name="actionWindowCloseAll"/>
+    <addaction name="separator"/>
+    <addaction name="actionWindowCascade"/>
+    <addaction name="actionWindowTile"/>
+    <addaction name="separator"/>
+    <addaction name="actionWindowNext"/>
+    <addaction name="actionWindowPrevious"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionToolsFind"/>
+    <addaction name="separator"/>
+    <addaction name="actionToolsProperties"/>
+    <addaction name="separator"/>
+    <addaction name="actionToolsItemBuilder"/>
+    <addaction name="actionToolsItemProperties"/>
+    <addaction name="actionToolsItemGenerator"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuView"/>
+   <addaction name="menuWindow"/>
+  </widget>
+  <widget class="QToolBar" name="fileToolBar">
+   <property name="windowTitle">
+    <string>File</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionFileNew"/>
+   <addaction name="actionFileOpen"/>
+   <addaction name="actionFileCompile"/>
+   <addaction name="separator"/>
+   <addaction name="actionFileImport"/>
+   <addaction name="actionFileExport"/>
+   <addaction name="separator"/>
+   <addaction name="actionFilePreferences"/>
+  </widget>
+  <widget class="QDockWidget" name="itemDock">
+   <property name="windowTitle">
+    <string>Items</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QTreeView" name="itemView">
+    <property name="contextMenuPolicy">
+     <enum>Qt::CustomContextMenu</enum>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+    <property name="dragEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="dragDropMode">
+     <enum>QAbstractItemView::DragDrop</enum>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::ExtendedSelection</enum>
+    </property>
+    <property name="indentation">
+     <number>10</number>
+    </property>
+    <property name="rootIsDecorated">
+     <bool>false</bool>
+    </property>
+    <property name="itemsExpandable">
+     <bool>false</bool>
+    </property>
+    <property name="allColumnsShowFocus">
+     <bool>true</bool>
+    </property>
+    <property name="headerHidden">
+     <bool>true</bool>
+    </property>
+    <property name="expandsOnDoubleClick">
+     <bool>false</bool>
+    </property>
+    <attribute name="headerDefaultSectionSize">
+     <number>0</number>
+    </attribute>
+    <attribute name="headerMinimumSectionSize">
+     <number>0</number>
+    </attribute>
+    <attribute name="headerShowSortIndicator" stdset="0">
+     <bool>false</bool>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="spriteDock">
+   <property name="windowTitle">
+    <string>Sprites</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="SpriteView" name="spriteView">
+    <property name="contextMenuPolicy">
+     <enum>Qt::CustomContextMenu</enum>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+    <property name="dragEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="dragDropMode">
+     <enum>QAbstractItemView::DragDrop</enum>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::ExtendedSelection</enum>
+    </property>
+    <property name="indentation">
+     <number>10</number>
+    </property>
+    <property name="rootIsDecorated">
+     <bool>false</bool>
+    </property>
+    <property name="itemsExpandable">
+     <bool>false</bool>
+    </property>
+    <property name="allColumnsShowFocus">
+     <bool>true</bool>
+    </property>
+    <property name="headerHidden">
+     <bool>true</bool>
+    </property>
+    <property name="expandsOnDoubleClick">
+     <bool>false</bool>
+    </property>
+    <attribute name="headerDefaultSectionSize">
+     <number>0</number>
+    </attribute>
+    <attribute name="headerMinimumSectionSize">
+     <number>0</number>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="outfitDock">
+   <property name="windowTitle">
+    <string>Outfits</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QTreeView" name="outfitView">
+    <property name="contextMenuPolicy">
+     <enum>Qt::CustomContextMenu</enum>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+    <property name="dragEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="dragDropMode">
+     <enum>QAbstractItemView::DragDrop</enum>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::ExtendedSelection</enum>
+    </property>
+    <property name="indentation">
+     <number>10</number>
+    </property>
+    <property name="rootIsDecorated">
+     <bool>false</bool>
+    </property>
+    <property name="itemsExpandable">
+     <bool>false</bool>
+    </property>
+    <property name="allColumnsShowFocus">
+     <bool>true</bool>
+    </property>
+    <property name="headerHidden">
+     <bool>true</bool>
+    </property>
+    <property name="expandsOnDoubleClick">
+     <bool>false</bool>
+    </property>
+    <attribute name="headerDefaultSectionSize">
+     <number>0</number>
+    </attribute>
+    <attribute name="headerMinimumSectionSize">
+     <number>0</number>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="effectDock">
+   <property name="windowTitle">
+    <string>Effects</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QTreeView" name="effectView">
+    <property name="contextMenuPolicy">
+     <enum>Qt::CustomContextMenu</enum>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+    <property name="dragEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="dragDropMode">
+     <enum>QAbstractItemView::DragDrop</enum>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::ExtendedSelection</enum>
+    </property>
+    <property name="indentation">
+     <number>10</number>
+    </property>
+    <property name="rootIsDecorated">
+     <bool>false</bool>
+    </property>
+    <property name="itemsExpandable">
+     <bool>false</bool>
+    </property>
+    <property name="allColumnsShowFocus">
+     <bool>true</bool>
+    </property>
+    <property name="headerHidden">
+     <bool>true</bool>
+    </property>
+    <property name="expandsOnDoubleClick">
+     <bool>false</bool>
+    </property>
+    <attribute name="headerDefaultSectionSize">
+     <number>0</number>
+    </attribute>
+    <attribute name="headerMinimumSectionSize">
+     <number>0</number>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="projectileDock">
+   <property name="windowTitle">
+    <string>Projectiles</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QTreeView" name="projectileView">
+    <property name="contextMenuPolicy">
+     <enum>Qt::CustomContextMenu</enum>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+    <property name="dragEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="dragDropMode">
+     <enum>QAbstractItemView::DragDrop</enum>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::ExtendedSelection</enum>
+    </property>
+    <property name="indentation">
+     <number>10</number>
+    </property>
+    <property name="rootIsDecorated">
+     <bool>false</bool>
+    </property>
+    <property name="itemsExpandable">
+     <bool>false</bool>
+    </property>
+    <property name="allColumnsShowFocus">
+     <bool>true</bool>
+    </property>
+    <property name="headerHidden">
+     <bool>true</bool>
+    </property>
+    <property name="expandsOnDoubleClick">
+     <bool>false</bool>
+    </property>
+    <attribute name="headerDefaultSectionSize">
+     <number>0</number>
+    </attribute>
+    <attribute name="headerMinimumSectionSize">
+     <number>0</number>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="pictureDock">
+   <property name="windowTitle">
+    <string>Pictures</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QTreeView" name="pictureView">
+    <property name="contextMenuPolicy">
+     <enum>Qt::CustomContextMenu</enum>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+    <property name="dragEnabled">
+     <bool>true</bool>
+    </property>
+    <property name="dragDropMode">
+     <enum>QAbstractItemView::DragDrop</enum>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::ExtendedSelection</enum>
+    </property>
+    <property name="indentation">
+     <number>10</number>
+    </property>
+    <property name="rootIsDecorated">
+     <bool>false</bool>
+    </property>
+    <property name="itemsExpandable">
+     <bool>false</bool>
+    </property>
+    <property name="allColumnsShowFocus">
+     <bool>true</bool>
+    </property>
+    <property name="headerHidden">
+     <bool>true</bool>
+    </property>
+    <property name="expandsOnDoubleClick">
+     <bool>false</bool>
+    </property>
+    <attribute name="headerDefaultSectionSize">
+     <number>0</number>
+    </attribute>
+    <attribute name="headerMinimumSectionSize">
+     <number>0</number>
+    </attribute>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="objectDock">
+   <property name="features">
+    <set>QDockWidget::AllDockWidgetFeatures</set>
+   </property>
+   <property name="windowTitle">
+    <string>Viewing</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>1</number>
+   </attribute>
+   <widget class="QListView" name="objectView">
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QDockWidget" name="historyDock">
+   <property name="windowTitle">
+    <string>History</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QUndoView" name="historyView">
+    <property name="contextMenuPolicy">
+     <enum>Qt::CustomContextMenu</enum>
+    </property>
+    <property name="acceptDrops">
+     <bool>true</bool>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="editTriggers">
+     <set>QAbstractItemView::NoEditTriggers</set>
+    </property>
+    <property name="dragEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="dragDropMode">
+     <enum>QAbstractItemView::DragDrop</enum>
+    </property>
+    <property name="alternatingRowColors">
+     <bool>true</bool>
+    </property>
+    <property name="selectionMode">
+     <enum>QAbstractItemView::NoSelection</enum>
+    </property>
+    <property name="selectionRectVisible">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QToolBar" name="editToolBar">
+   <property name="windowTitle">
+    <string>Edit</string>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::AllToolBarAreas</set>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionEditUndo"/>
+   <addaction name="actionEditRedo"/>
+   <addaction name="separator"/>
+   <addaction name="actionEditCut"/>
+   <addaction name="actionEditCopy"/>
+   <addaction name="actionEditPaste"/>
+   <addaction name="separator"/>
+   <addaction name="actionEditSelectAll"/>
+   <addaction name="actionEditDeselect"/>
+   <addaction name="separator"/>
+   <addaction name="actionEditInsert"/>
+   <addaction name="actionEditDelete"/>
+  </widget>
+  <widget class="QToolBar" name="editToolToolBar">
+   <property name="windowTitle">
+    <string>Tools</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>32</width>
+     <height>32</height>
+    </size>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonIconOnly</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionToolsFind"/>
+   <addaction name="separator"/>
+   <addaction name="actionToolsProperties"/>
+   <addaction name="separator"/>
+   <addaction name="actionToolsItemBuilder"/>
+   <addaction name="actionToolsItemProperties"/>
+   <addaction name="actionToolsItemGenerator"/>
+  </widget>
+  <widget class="QToolBar" name="progressToolBar">
+   <property name="windowTitle">
+    <string>Progress</string>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>74</width>
+     <height>21</height>
+    </size>
+   </property>
+   <property name="floatable">
+    <bool>true</bool>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <action name="actionFileImport">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/fileimport.png</normaloff>:/TibiaEditor/Resources/fileimport.png</iconset>
+   </property>
+   <property name="text">
+    <string>Import...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+I</string>
+   </property>
+  </action>
+  <action name="actionFileExport">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/fileexport.png</normaloff>:/TibiaEditor/Resources/fileexport.png</iconset>
+   </property>
+   <property name="text">
+    <string>Export...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="actionFilePreferences">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/preferences.png</normaloff>:/TibiaEditor/Resources/preferences.png</iconset>
+   </property>
+   <property name="text">
+    <string>Preferences...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionFileExit">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/fileexit.png</normaloff>:/TibiaEditor/Resources/fileexit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
+  <action name="actionEditUndo">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/editundo.png</normaloff>:/TibiaEditor/Resources/editundo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionEditRedo">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/editredo.png</normaloff>:/TibiaEditor/Resources/editredo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="actionEditCut">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/editcut.png</normaloff>:/TibiaEditor/Resources/editcut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cut</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="actionEditCopy">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/editcopy.png</normaloff>:/TibiaEditor/Resources/editcopy.png</iconset>
+   </property>
+   <property name="text">
+    <string>Copy</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionEditPaste">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/editpaste.png</normaloff>:/TibiaEditor/Resources/editpaste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Paste</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="actionEditInsert">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/plus.png</normaloff>:/TibiaEditor/Resources/plus.png</iconset>
+   </property>
+   <property name="text">
+    <string>Insert</string>
+   </property>
+   <property name="shortcut">
+    <string>Ins</string>
+   </property>
+  </action>
+  <action name="actionEditDelete">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/minus.png</normaloff>:/TibiaEditor/Resources/minus.png</iconset>
+   </property>
+   <property name="text">
+    <string>Delete</string>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
+  </action>
+  <action name="actionWindowFullScreen">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/viewfullscreen.png</normaloff>:/TibiaEditor/Resources/viewfullscreen.png</iconset>
+   </property>
+   <property name="text">
+    <string>Full Screen</string>
+   </property>
+   <property name="shortcut">
+    <string>F12</string>
+   </property>
+  </action>
+  <action name="actionWindowCloseAll">
+   <property name="text">
+    <string>Close All</string>
+   </property>
+  </action>
+  <action name="actionWindowCascade">
+   <property name="text">
+    <string>Cascade</string>
+   </property>
+  </action>
+  <action name="actionWindowTile">
+   <property name="text">
+    <string>Tile</string>
+   </property>
+  </action>
+  <action name="actionWindowNext">
+   <property name="text">
+    <string>Next</string>
+   </property>
+  </action>
+  <action name="actionWindowPrevious">
+   <property name="text">
+    <string>Previous</string>
+   </property>
+  </action>
+  <action name="actionToolsFind">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/search.png</normaloff>:/TibiaEditor/Resources/search.png</iconset>
+   </property>
+   <property name="text">
+    <string>Find...</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionEditSelectAll">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/editselectall.png</normaloff>:/TibiaEditor/Resources/editselectall.png</iconset>
+   </property>
+   <property name="text">
+    <string>Select All</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionToolsProperties">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/fileproperties.png</normaloff>:/TibiaEditor/Resources/fileproperties.png</iconset>
+   </property>
+   <property name="text">
+    <string>File Properties...</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+P</string>
+   </property>
+  </action>
+  <action name="actionToolsItemProperties">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/itemproperties.png</normaloff>:/TibiaEditor/Resources/itemproperties.png</iconset>
+   </property>
+   <property name="text">
+    <string>Item Property Editor...</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+E</string>
+   </property>
+  </action>
+  <action name="actionToolsItemGenerator">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/itemgenerator.png</normaloff>:/TibiaEditor/Resources/itemgenerator.png</iconset>
+   </property>
+   <property name="text">
+    <string>Item Generator...</string>
+   </property>
+   <property name="shortcut">
+    <string>Alt+G</string>
+   </property>
+  </action>
+  <action name="actionEditOpenItem">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/openitem.png</normaloff>:/TibiaEditor/Resources/openitem.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionToolsItemBuilder">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/itembuilder.png</normaloff>:/TibiaEditor/Resources/itembuilder.png</iconset>
+   </property>
+   <property name="text">
+    <string>Item Builder...</string>
+   </property>
+  </action>
+  <action name="actionEditCloseItem">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/closeitem.png</normaloff>:/TibiaEditor/Resources/closeitem.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionEditDeselect">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/deselect.png</normaloff>:/TibiaEditor/Resources/deselect.png</iconset>
+   </property>
+   <property name="text">
+    <string>Clear Selection</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+D</string>
+   </property>
+  </action>
+  <action name="actionNewItem">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/fileitem.png</normaloff>:/TibiaEditor/Resources/fileitem.png</iconset>
+   </property>
+   <property name="text">
+    <string>Item...</string>
+   </property>
+  </action>
+  <action name="actionNewDat">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/filedat.png</normaloff>:/TibiaEditor/Resources/filedat.png</iconset>
+   </property>
+   <property name="text">
+    <string>Dat File</string>
+   </property>
+   <property name="toolTip">
+    <string>Dat File</string>
+   </property>
+  </action>
+  <action name="actionNewSpr">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/filespr.png</normaloff>:/TibiaEditor/Resources/filespr.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sprite File</string>
+   </property>
+   <property name="toolTip">
+    <string>Sprite File</string>
+   </property>
+  </action>
+  <action name="actionNewPic">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/filepic.png</normaloff>:/TibiaEditor/Resources/filepic.png</iconset>
+   </property>
+   <property name="text">
+    <string>Picture File</string>
+   </property>
+   <property name="toolTip">
+    <string>Picture File</string>
+   </property>
+  </action>
+  <action name="actionOpenDat">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/filedat.png</normaloff>:/TibiaEditor/Resources/filedat.png</iconset>
+   </property>
+   <property name="text">
+    <string>Dat File...</string>
+   </property>
+   <property name="toolTip">
+    <string>Dat File</string>
+   </property>
+  </action>
+  <action name="actionOpenSpr">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/filespr.png</normaloff>:/TibiaEditor/Resources/filespr.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sprite File...</string>
+   </property>
+   <property name="toolTip">
+    <string>Sprite File</string>
+   </property>
+  </action>
+  <action name="actionOpenPic">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/filepic.png</normaloff>:/TibiaEditor/Resources/filepic.png</iconset>
+   </property>
+   <property name="text">
+    <string>Picture File...</string>
+   </property>
+   <property name="toolTip">
+    <string>Picture File</string>
+   </property>
+  </action>
+  <action name="actionOpenItem">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/fileitem.png</normaloff>:/TibiaEditor/Resources/fileitem.png</iconset>
+   </property>
+   <property name="text">
+    <string>Item...</string>
+   </property>
+  </action>
+  <action name="actionCompileDat">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/filedat.png</normaloff>:/TibiaEditor/Resources/filedat.png</iconset>
+   </property>
+   <property name="text">
+    <string>Dat File...</string>
+   </property>
+   <property name="toolTip">
+    <string>Item File</string>
+   </property>
+  </action>
+  <action name="actionCompileSpr">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/filespr.png</normaloff>:/TibiaEditor/Resources/filespr.png</iconset>
+   </property>
+   <property name="text">
+    <string>Sprite File...</string>
+   </property>
+   <property name="toolTip">
+    <string>Sprite File</string>
+   </property>
+  </action>
+  <action name="actionCompilePic">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/filepic.png</normaloff>:/TibiaEditor/Resources/filepic.png</iconset>
+   </property>
+   <property name="text">
+    <string>Picture File...</string>
+   </property>
+   <property name="toolTip">
+    <string>Picture File</string>
+   </property>
+  </action>
+  <action name="actionCompileItem">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/fileitem.png</normaloff>:/TibiaEditor/Resources/fileitem.png</iconset>
+   </property>
+   <property name="text">
+    <string>Item...</string>
+   </property>
+  </action>
+  <action name="actionFileNew">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/filenew.png</normaloff>:/TibiaEditor/Resources/filenew.png</iconset>
+   </property>
+   <property name="text">
+    <string>New</string>
+   </property>
+   <property name="toolTip">
+    <string>New</string>
+   </property>
+  </action>
+  <action name="actionFileOpen">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/fileopen.png</normaloff>:/TibiaEditor/Resources/fileopen.png</iconset>
+   </property>
+   <property name="text">
+    <string>Open</string>
+   </property>
+   <property name="toolTip">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionFileCompile">
+   <property name="icon">
+    <iconset resource="tibiaeditor.qrc">
+     <normaloff>:/TibiaEditor/Resources/filesave.png</normaloff>:/TibiaEditor/Resources/filesave.png</iconset>
+   </property>
+   <property name="text">
+    <string>Compile</string>
+   </property>
+   <property name="toolTip">
+    <string>Compile</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>QUndoView</class>
+   <extends>QListView</extends>
+   <header>QUndoView</header>
+  </customwidget>
+  <customwidget>
+   <class>SpriteView</class>
+   <extends>QTreeView</extends>
+   <header>spriteview.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="tibiaeditor.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>actionFileExit</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>409</x>
+     <y>293</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEditOpenItem</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onEditOpenItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEditCloseItem</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onEditCloseItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCompileDat</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFileCompileDat()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCompileSpr</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFileCompileSpr()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCompilePic</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFileCompilePic()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionCompileItem</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFileCompileItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEditCopy</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onEditCopy()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEditCut</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onEditCut()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEditPaste</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onEditPaste()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEditInsert</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onEditInsert()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEditDelete</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onEditDelete()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEditSelectAll</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onEditSelectAll()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEditDeselect</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onEditDeselect()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFileExport</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFileExport()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFileImport</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFileImport()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionToolsProperties</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onEditProperties()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionToolsFind</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onEditFind()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionToolsItemProperties</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onEditItemProperties()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionWindowFullScreen</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFullScreen(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionWindowCascade</sender>
+   <signal>triggered()</signal>
+   <receiver>mdiArea</receiver>
+   <slot>cascadeSubWindows()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionWindowTile</sender>
+   <signal>triggered()</signal>
+   <receiver>mdiArea</receiver>
+   <slot>tileSubWindows()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionWindowNext</sender>
+   <signal>triggered()</signal>
+   <receiver>mdiArea</receiver>
+   <slot>activateNextSubWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionWindowPrevious</sender>
+   <signal>triggered()</signal>
+   <receiver>mdiArea</receiver>
+   <slot>activatePreviousSubWindow()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionWindowCloseAll</sender>
+   <signal>triggered()</signal>
+   <receiver>mdiArea</receiver>
+   <slot>closeAllSubWindows()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>404</x>
+     <y>374</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNewDat</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFileNewDat()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNewSpr</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFileNewSpr()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNewPic</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFileNewPic()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNewItem</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFileNewItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpenDat</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFileOpenDat()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpenSpr</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFileOpenSpr()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpenPic</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFileOpenPic()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionOpenItem</sender>
+   <signal>triggered()</signal>
+   <receiver>TibiaEditorClass</receiver>
+   <slot>onFileOpenItem()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>383</x>
+     <y>343</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>onEditInsert()</slot>
+  <slot>onEditDelete()</slot>
+  <slot>onEditSelectAll()</slot>
+  <slot>onEditDeselect()</slot>
+  <slot>onEditCut()</slot>
+  <slot>onEditCopy()</slot>
+  <slot>onEditPaste()</slot>
+  <slot>onEditFind()</slot>
+  <slot>onFileImport()</slot>
+  <slot>onFileExport()</slot>
+  <slot>onEditProperties()</slot>
+  <slot>onEditItemProperties()</slot>
+  <slot>onEditOpenItem()</slot>
+  <slot>onEditCloseItem()</slot>
+  <slot>onFullScreen(bool)</slot>
+  <slot>onFileNewDat()</slot>
+  <slot>onFileNewSpr()</slot>
+  <slot>onFileNewPic()</slot>
+  <slot>onFileNewItem()</slot>
+  <slot>onFileOpenDat()</slot>
+  <slot>onFileOpenSpr()</slot>
+  <slot>onFileOpenPic()</slot>
+  <slot>onFileOpenItem()</slot>
+  <slot>onFileCompileDat()</slot>
+  <slot>onFileCompileSpr()</slot>
+  <slot>onFileCompilePic()</slot>
+  <slot>onFileCompileItem()</slot>
+ </slots>
+</ui>

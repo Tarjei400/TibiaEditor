@@ -1,0 +1,7 @@
+*.o
+bin/
+build/
+*.dat
+*.spr
+*.otb
+

@@ -1,0 +1,4 @@
+# Normalize source code before commits
+*.cpp eol=lf 
+*.h   eol=lf
+
