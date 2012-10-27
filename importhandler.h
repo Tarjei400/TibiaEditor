@@ -1,11 +1,11 @@
 #ifndef IMPORTHANDLER_H
 #define IMPORTHANDLER_H
 
-#include <QDialog>
-#include <QDir>
-#include <QFutureWatcher>
-#include <QTime>
-#include <QCloseEvent>
+#include <QtGui/QDialog>
+#include <QtCore/QDir>
+#include <QtCore/QFutureWatcher>
+#include <QtCore/QTime>
+#include <QtGui/QCloseEvent>
 #include "ui_importhandler.h"
 #include "importthread.h"
 

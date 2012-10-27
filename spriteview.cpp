@@ -1,4 +1,4 @@
-#include <QDrag>
+#include <QtGui/QDrag>
 #include "spriteview.h"
 
 void SpriteView::startDrag( Qt::DropActions supportedActions )

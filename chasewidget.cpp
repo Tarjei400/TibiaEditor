@@ -1,12 +1,12 @@
 #include "chasewidget.h"
 
-#include <QPoint>
+#include <QtCore/QPoint>
 
-#include <QApplication>
-#include <QHideEvent>
-#include <QPainter>
-#include <QPaintEvent>
-#include <QShowEvent>
+#include <QtGui/QApplication>
+#include <QtGui/QHideEvent>
+#include <QtGui/QPainter>
+#include <QtGui/QPaintEvent>
+#include <QtGui/QShowEvent>
 
 ChaseWidget::ChaseWidget( QWidget *parent, QPixmap pixmap, bool pixmapEnabled ) : QWidget( parent )
     , m_segment( 0 )

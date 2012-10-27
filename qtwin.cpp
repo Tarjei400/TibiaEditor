@@ -1,13 +1,13 @@
 #include "qtwin.h"
-#include <QLibrary>
-#include <QApplication>
-#include <QWidget>
-#include <QList>
-#include <QPointer>
+#include <QtCore/QLibrary>
+#include <QtGui/QApplication>
+#include <QtGui/QWidget>
+#include <QtCore/QList>
+#include <QtCore/QPointer>
 
 #ifdef Q_WS_WIN
 
-#include <qt_windows.h>
+#include <QtCore/qt_windows.h>
 
 // Blur behind data structures
 #define DWM_BB_ENABLE                 0x00000001  // fEnable has been specified

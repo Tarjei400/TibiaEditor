@@ -1,7 +1,7 @@
 #ifndef SPRITEVIEW_H
 #define SPRITEVIEW_H
 
-#include <QTreeView>
+#include <QtGui/QTreeView>
 
 class SpriteView : public QTreeView
 {

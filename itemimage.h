@@ -1,11 +1,11 @@
 #ifndef ITEMIMAGE_H
 #define ITEMIMAGE_H
 
-#include <QImage>
-#include <QFrame>
-#include <QMutexLocker>
-#include <QMap>
-#include <QUrl>
+#include <QtGui/QImage>
+#include <QtGui/QFrame>
+#include <QtCore/QMutexLocker>
+#include <QtCore/QMap>
+#include <QtCore/QUrl>
 
 #include "tibiaresource.h"
 

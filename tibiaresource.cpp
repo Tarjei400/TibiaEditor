@@ -1,5 +1,5 @@
-#include <QPixmapCache>
-#include <QMutex>
+#include <QtGui/QPixmapCache>
+#include <QtCore/QMutex>
 #include "resourcefile.h"
 #include "tibiaresource.h"
 #include "tibiasprite.h"

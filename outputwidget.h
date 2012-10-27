@@ -1,7 +1,7 @@
 #ifndef OUTPUTWIDGET_H
 #define OUTPUTWIDGET_H
 
-#include <QTextEdit>
+#include <QtGui/QTextEdit>
 
 class OutputWidget : public QTextEdit
 {

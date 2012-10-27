@@ -1,9 +1,9 @@
 #ifndef ITEMSEARCH_H
 #define ITEMSEARCH_H
 
-#include <QDialog>
-#include <QTime>
-#include <QFutureWatcher>
+#include <QtGui/QDialog>
+#include <QtCore/QTime>
+#include <QtCore/QFutureWatcher>
 #include "ui_itemsearch.h"
 
 class ItemModel;

@@ -1,6 +1,6 @@
-#include <QCoreApplication>
-#include <QMimeData>
-#include <QPainter>
+#include <QtCore/QCoreApplication>
+#include <QtCore/QMimeData>
+#include <QtGui/QPainter>
 #include "tibiahandler.h"
 #include "resourcehandler.h"
 #include "formathandler.h"

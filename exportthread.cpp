@@ -1,5 +1,5 @@
-#include <QString>
-#include <QTime>
+#include <QtCore/QString>
+#include <QtCore/QTime>
 
 #include "exportthread.h"
 #include "libraryfile.h"

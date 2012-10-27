@@ -1,9 +1,9 @@
 #ifndef SPRITEMODEL_H
 #define SPRITEMODEL_H
 
-#include <QAbstractListModel>
-#include <QStringList>
-#include <QList>
+#include <QtCore/QAbstractListModel>
+#include <QtCore/QStringList>
+#include <QtCore/QList>
 #include "spritefile.h"
 #include "picturefile.h"
 #include "resourcehandler.h"

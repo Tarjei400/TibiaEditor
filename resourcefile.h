@@ -1,8 +1,8 @@
 #ifndef RESOURCEFILE_H
 #define RESOURCEFILE_H
 
-#include <QTemporaryFile>
-#include <QDir>
+#include <QtCore/QTemporaryFile>
+#include <QtCore/QDir>
 #include "tibiasprite.h"
 
 class ResourceFile : public QTemporaryFile

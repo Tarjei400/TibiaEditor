@@ -1,7 +1,7 @@
 #ifndef HEXDOUBLESPINBOX_H
 #define HEXDOUBLESPINBOX_H
 
-#include <QDoubleSpinBox>
+#include <QtGui/QDoubleSpinBox>
 
 class HexDoubleSpinBox : public QDoubleSpinBox
 {

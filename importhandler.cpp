@@ -1,12 +1,12 @@
-#include <QMenu>
-#include <QPushButton>
-#include <QFileDialog>
-#include <QMimeData>
-#include <QDir>
-#include <QUrl>
-#include <QMessageBox>
-#include <QProgressDialog>
-#include <qtconcurrentrun.h>
+#include <QtGui/QMenu>
+#include <QtGui/QPushButton>
+#include <QtGui/QFileDialog>
+#include <QtCore/QMimeData>
+#include <QtCore/QDir>
+#include <QtCore/QUrl>
+#include <QtGui/QMessageBox>
+#include <QtGui/QProgressDialog>
+#include <QtCore/qtconcurrentrun.h>
 
 #include "itemmodel.h"
 #include "spritemodel.h"
@@ -235,7 +235,7 @@ void ImportHandler::onDropFiles( const QMimeData *data, int row, const QModelInd
             break;
         }
 
-        dropFiles( QStringList(), *dynamic_cast<QUrlList *>(&data->urls()), dropMode );
+        dropFiles( QStringList(), data->urls(), dropMode );
     }
 }
 

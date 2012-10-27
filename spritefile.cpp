@@ -1,6 +1,6 @@
-#include <QMap>
-#include <QDir>
-#include <QTemporaryFile>
+#include <QtCore/QMap>
+#include <QtCore/QDir>
+#include <QtCore/QTemporaryFile>
 #include "spritefile.h"
 #include "resourcehandler.h"
 #include "userthread.h"

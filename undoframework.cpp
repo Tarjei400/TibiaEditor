@@ -1,8 +1,8 @@
-#include <QMessageBox>
-#include <QApplication>
-#include <QMimeData>
-#include <QClipboard>
-#include <QDebug>
+#include <QtGui/QMessageBox>
+#include <QtGui/QApplication>
+#include <QtCore/QMimeData>
+#include <QtGui/QClipboard>
+#include <QtCore/QDebug>
 
 #include "undoframework.h"
 #include "itemattributes.h"

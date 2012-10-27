@@ -1,8 +1,8 @@
 #ifndef QTWIN_H
 #define QTWIN_H
 
-#include <QColor>
-#include <QWidget>
+#include <QtGui/QColor>
+#include <QtGui/QWidget>
 /**
   * This is a helper class for using the Desktop Window Manager
   * functionality on Windows 7 and Windows Vista. On other platforms

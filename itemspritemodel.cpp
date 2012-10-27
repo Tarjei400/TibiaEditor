@@ -1,4 +1,4 @@
-#include <QMimeData>
+#include <QtCore/QMimeData>
 #include "itemspritemodel.h"
 #include "resourcehandler.h"
 #include "tibiahandler.h"

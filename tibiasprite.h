@@ -1,8 +1,8 @@
 #ifndef TIBIASPRITE_H
 #define TIBIASPRITE_H
 
-#include <QImage>
-#include <QHash>
+#include <QtGui/QImage>
+#include <QtCore/QHash>
 
 #include "tibiaobject.h"
 

@@ -1,11 +1,11 @@
 #ifndef CHASEWIDGET_H
 #define CHASEWIDGET_H
 
-#include <QWidget>
+#include <QtGui/QWidget>
 
-#include <QSize>
-#include <QColor>
-#include <QPixmap>
+#include <QtCore/QSize>
+#include <QtGui/QColor>
+#include <QtGui/QPixmap>
 
 QT_BEGIN_NAMESPACE
 class QHideEvent;

@@ -1,8 +1,8 @@
 #ifndef TIBIAHANDLER_H
 #define TIBIAHANDLER_H
 
-#include <QListView>
-#include <QTreeView>
+#include <QtGui/QListView>
+#include <QtGui/QTreeView>
 
 #include "tibiafile.h"
 #include "spritefile.h"

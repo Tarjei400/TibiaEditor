@@ -1,7 +1,7 @@
 #ifndef SPRITEFILE_H
 #define SPRITEFILE_H
 
-#include <QThread>
+#include <QtCore/QThread>
 
 #include "tibiasprite.h"
 #include "tibiafile.h"

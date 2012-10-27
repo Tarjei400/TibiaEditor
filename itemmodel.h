@@ -1,8 +1,8 @@
 #ifndef ITEMMODEL_H
 #define ITEMMODEL_H
 
-#include <QAbstractItemModel>
-#include <QVector>
+#include <QtCore/QAbstractItemModel>
+#include <QtCore/QVector>
 #include "tibiahandler.h"
 #include "tibiaitem.h"
 

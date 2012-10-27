@@ -1,8 +1,8 @@
-#include <QMessageBox>
-#include <QCloseEvent>
-#include <QItemSelectionModel>
+#include <QtGui/QMessageBox>
+#include <QtGui/QCloseEvent>
+#include <QtGui/QItemSelectionModel>
 
-#include "qtconcurrentrun.h"
+#include "QtCore/qtconcurrentrun.h"
 
 #include "itemsearch.h"
 #include "tibiahandler.h"

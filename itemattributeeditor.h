@@ -1,7 +1,7 @@
 #ifndef ITEMATTRIBUTEEDITOR_H
 #define ITEMATTRIBUTEEDITOR_H
 
-#include <QDialog>
+#include <QtGui/QDialog>
 #include "ui_itemattributeeditor.h"
 
 class TibiaHandler;

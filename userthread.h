@@ -1,10 +1,10 @@
 #ifndef USERTHREAD_H
 #define USERTHREAD_H
 
-#include <QThread>
-#include <QFile>
-#include <QMutex>
-#include <QMutexLocker>
+#include <QtCore/QThread>
+#include <QtCore/QFile>
+#include <QtCore/QMutex>
+#include <QtCore/QMutexLocker>
 
 class QProgressDialog;
 

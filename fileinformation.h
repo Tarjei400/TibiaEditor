@@ -1,7 +1,7 @@
 #ifndef FILEINFORMATION_H
 #define FILEINFORMATION_H
 
-#include <QDialog>
+#include <QtGui/QDialog>
 #include "ui_fileinformation.h"
 
 class TibiaHandler;

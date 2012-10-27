@@ -9,9 +9,9 @@
 #include <crtdbg.h>*/
 
 #ifndef NO_STARTUP
-#include <QDialog>
-#include <QLabel>
-#include <QVBoxLayout>
+#include <QtGui/QDialog>
+#include <QtGui/QLabel>
+#include <QtGui/QVBoxLayout>
 #endif
 
 TibiaHandler g_tibiaHandler;

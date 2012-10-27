@@ -1,7 +1,7 @@
 #ifndef EXPORTTHREAD_H
 #define EXPORTTHREAD_H
 
-#include <QDir>
+#include <QtCore/QDir>
 #include "userthread.h"
 #include "tibiaresource.h"
 #include "tibiahandler.h"

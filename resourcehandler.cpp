@@ -1,6 +1,6 @@
-#include <QCoreApplication>
-#include <QDir>
-#include <QTemporaryFile>
+#include <QtCore/QCoreApplication>
+#include <QtCore/QDir>
+#include <QtCore/QTemporaryFile>
 #include "resourcehandler.h"
 #include "tibiasprite.h"
 #include "resourcefile.h"

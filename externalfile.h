@@ -1,7 +1,7 @@
 #ifndef EXTERNALFILE_H
 #define EXTERNALFILE_H
 
-#include <QDataStream>
+#include <QtCore/QDataStream>
 
 #include "tibiafile.h"
 #include "itemfile.h"

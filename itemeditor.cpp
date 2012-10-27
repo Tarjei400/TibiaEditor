@@ -1,7 +1,7 @@
-#include <QIcon>
-#include <QPixmap>
-#include <QMessageBox>
-#include <QCloseEvent>
+#include <QtGui/QIcon>
+#include <QtGui/QPixmap>
+#include <QtGui/QMessageBox>
+#include <QtGui/QCloseEvent>
 
 #include "mimeconstants.h"
 

@@ -1,9 +1,9 @@
-#include <QPainter>
-#include <QDragEnterEvent>
-#include <QDragLeaveEvent>
-#include <QDragLeaveEvent>
-#include <QDropEvent>
-#include <QApplication>
+#include <QtGui/QPainter>
+#include <QtGui/QDragEnterEvent>
+#include <QtGui/QDragLeaveEvent>
+#include <QtGui/QDragLeaveEvent>
+#include <QtGui/QDropEvent>
+#include <QtGui/QApplication>
 
 #include "itemimage.h"
 #include "tibiahandler.h"

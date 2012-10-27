@@ -1,9 +1,9 @@
 #ifndef ITEMEDITOR_H
 #define ITEMEDITOR_H
 
-#include <QMdiSubWindow>
-#include <QUndoStack>
-#include <QWidget>
+#include <QtGui/QMdiSubWindow>
+#include <QtGui/QUndoStack>
+#include <QtGui/QWidget>
 #include "tibiahandler.h"
 #include "ui_itemeditor.h"
 

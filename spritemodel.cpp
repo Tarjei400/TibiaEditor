@@ -1,5 +1,5 @@
-#include <QMimeData>
-#include <QPixmapCache>
+#include <QtCore/QMimeData>
+#include <QtGui/QPixmapCache>
 #include "spritemodel.h"
 #include "tibiafile.h"
 #include "resourcehandler.h"

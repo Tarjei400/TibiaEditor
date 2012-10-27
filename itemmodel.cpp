@@ -1,4 +1,4 @@
-#include <QMimeData>
+#include <QtCore/QMimeData>
 #include "tibiaitem.h"
 #include "itemmodel.h"
 

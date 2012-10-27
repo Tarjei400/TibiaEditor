@@ -1,14 +1,14 @@
 #ifndef TIBIAITEM_H
 #define TIBIAITEM_H
 
-#include <QMap>
-#include <QList>
-#include <QVector>
-#include <QMutex>
-#include <QMutexLocker>
-#include <QSharedPointer>
+#include <QtCore/QMap>
+#include <QtCore/QList>
+#include <QtCore/QVector>
+#include <QtCore/QMutex>
+#include <QtCore/QMutexLocker>
+#include <QtCore/QSharedPointer>
 
-#include <QDataStream>
+#include <QtCore/QDataStream>
 
 #include "tibiamodule.h"
 #include "tibiasprite.h"

@@ -1,4 +1,4 @@
-#include <QMutex>
+#include <QtCore/QMutex>
 #include "resourcefile.h"
 
 ResourceFile::ResourceFile( const QDir& directory, quint32 identifier, const TibiaSprite& tibiaSprite, QObject *parent ) : QTemporaryFile( parent )

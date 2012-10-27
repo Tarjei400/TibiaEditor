@@ -1,11 +1,11 @@
 #ifndef FORMATHANDLER_H
 #define FORMATHANDLER_H
 
-#include <QFile>
-#include <QObject>
-#include <QList>
-#include <QMultiHash>
-#include <QMap>
+#include <QtCore/QFile>
+#include <QtCore/QObject>
+#include <QtCore/QList>
+#include <QtCore/QMultiHash>
+#include <QtCore/QMap>
 
 #define BASE_FORMAT_KEY -1
 

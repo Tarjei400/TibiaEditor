@@ -1,12 +1,12 @@
 #ifndef EXPORTHANDLER_H
 #define EXPORTHANDLER_H
 
-#include <QTime>
-#include <QDir>
-#include <QDialog>
-#include <QThread>
-#include <QCloseEvent>
-#include <QMutexLocker>
+#include <QtCore/QTime>
+#include <QtCore/QDir>
+#include <QtGui/QDialog>
+#include <QtCore/QThread>
+#include <QtGui/QCloseEvent>
+#include <QtCore/QMutexLocker>
 #include "exportthread.h"
 #include "spritemodel.h"
 #include "ui_exporthandler.h"

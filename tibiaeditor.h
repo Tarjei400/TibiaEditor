@@ -1,13 +1,13 @@
 #ifndef TIBIAEDITOR_H
 #define TIBIAEDITOR_H
 
-#include <QMainWindow>
-#include <QFile>
-#include <QItemSelectionModel>
-#include <QUndoView>
-#include <QUndoStack>
-#include <QUndoCommand>
-#include <QUndoGroup>
+#include <QtGui/QMainWindow>
+#include <QtCore/QFile>
+#include <QtGui/QItemSelectionModel>
+#include <QtGui/QUndoView>
+#include <QtGui/QUndoStack>
+#include <QtGui/QUndoCommand>
+#include <QtGui/QUndoGroup>
 
 #include "undoframework.h"
 #include "ui_tibiaeditor.h"

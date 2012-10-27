@@ -1,4 +1,4 @@
-#include <QPushButton>
+#include <QtGui/QPushButton>
 #include "itemattributeeditor.h"
 #include "itemmodel.h"
 #include "tibiahandler.h"

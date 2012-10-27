@@ -1,4 +1,4 @@
-#include <QTime>
+#include <QtCore/QTime>
 #include "importthread.h"
 #include "externalfile.h"
 #include "libraryfile.h"

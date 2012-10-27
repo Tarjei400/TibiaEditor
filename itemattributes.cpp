@@ -1,9 +1,9 @@
 #include <math.h>
-#include <QCheckBox>
-#include <QLabel>
-#include <QSpinBox>
-#include <QMutableHashIterator>
-#include <QMutableListIterator>
+#include <QtGui/QCheckBox>
+#include <QtGui/QLabel>
+#include <QtGui/QSpinBox>
+#include <QtCore/QMutableHashIterator>
+#include <QtCore/QMutableListIterator>
 
 #include "formathandler.h"
 #include "itemattributes.h"

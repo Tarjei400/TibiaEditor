@@ -1,4 +1,4 @@
-#include <QTemporaryFile>
+#include <QtCore/QTemporaryFile>
 
 #include "tibiahandler.h"
 #include "externalfile.h"
@@ -113,8 +113,8 @@ bool ExternalFile::readItem( QDataStream& in, ItemData& itemData, DatFormat *dat
 
             QMutex mutex;
             mutex.lock();
-            SharedResource *resource = &g_resourceHandler.addResource(RESOURCE_TYPE_SPRITE, index, i, tibiaModule);
-            d_itemData.setSpriteResource(i, *resource);
+            SharedResource resource = g_resourceHandler.addResource(RESOURCE_TYPE_SPRITE, index, i, tibiaModule);
+            d_itemData.setSpriteResource(i, resource);
             mutex.unlock();
             now += sizeof( quint32 );
         }

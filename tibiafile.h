@@ -1,8 +1,8 @@
 #ifndef TIBIAFILE_H
 #define TIBIAFILE_H
 
-#include <QFile>
-#include <QDataStream>
+#include <QtCore/QFile>
+#include <QtCore/QDataStream>
 
 class TibiaItem;
 class TibiaSprite;

@@ -1,9 +1,9 @@
 #ifndef TIBIARESOURCE_H
 #define TIBIARESOURCE_H
 
-#include <QSharedPointer>
-#include <QHash>
-#include <QFile>
+#include <QtCore/QSharedPointer>
+#include <QtCore/QHash>
+#include <QtCore/QFile>
 
 class TibiaSprite;
 

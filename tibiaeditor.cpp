@@ -1,13 +1,13 @@
-#include <QSettings>
-#include <QFileDialog>
-#include <QPixmap>
-#include <QMessageBox>
-#include <QMimeData>
-#include <QClipboard>
-#include <QProgressDialog>
+#include <QtCore/QSettings>
+#include <QtGui/QFileDialog>
+#include <QtGui/QPixmap>
+#include <QtGui/QMessageBox>
+#include <QtCore/QMimeData>
+#include <QtGui/QClipboard>
+#include <QtGui/QProgressDialog>
 
 #include "mimeconstants.h"
-#include "qtconcurrentrun.h"
+#include "QtCore/qtconcurrentrun.h"
 
 #include "tibiahandler.h"
 #include "resourcehandler.h"

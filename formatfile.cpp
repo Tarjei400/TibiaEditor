@@ -1,6 +1,6 @@
-#include <QDomDocument>
-#include <QDomElement>
-#include <QDomNode>
+#include <QtXml/QDomDocument>
+#include <QtXml/QDomElement>
+#include <QtXml/QDomNode>
 #include "formatfile.h"
 
 

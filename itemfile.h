@@ -1,8 +1,8 @@
 #ifndef ITEMFILE_H
 #define ITEMFILE_H
 
-#include <QMutex>
-#include <QDataStream>
+#include <QtCore/QMutex>
+#include <QtCore/QDataStream>
 #include "tibiafile.h"
 #include "tibiaitem.h"
 

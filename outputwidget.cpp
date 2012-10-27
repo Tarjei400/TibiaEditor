@@ -1,5 +1,5 @@
-#include <QTime>
-#include <QScrollBar>
+#include <QtCore/QTime>
+#include <QtGui/QScrollBar>
 #include "outputwidget.h"
 
 OutputWidget::OutputWidget( QWidget *parent ) : QTextEdit( parent )

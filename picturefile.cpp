@@ -1,4 +1,4 @@
-#include <QTemporaryFile>
+#include <QtCore/QTemporaryFile>
 
 #include "picturefile.h"
 #include "resourcehandler.h"

@@ -1,4 +1,4 @@
-#include <QTemporaryFile>
+#include <QtCore/QTemporaryFile>
 
 #include "libraryfile.h"
 #include "tibiahandler.h"

@@ -1,8 +1,8 @@
 #ifndef FORMATFILE_H
 #define FORMATFILE_H
 
-#include <QVector>
-#include <QMap>
+#include <QtCore/QVector>
+#include <QtCore/QMap>
 
 #include "tibiafile.h"
 

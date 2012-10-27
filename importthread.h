@@ -1,10 +1,10 @@
 #ifndef IMPORTTHREAD_H
 #define IMPORTTHREAD_H
 
-#include <QMetaType>
-#include <QUrl>
-#include <QDir>
-#include <QStringList>
+#include <QtCore/QMetaType>
+#include <QtCore/QUrl>
+#include <QtCore/QDir>
+#include <QtCore/QStringList>
 #include "userthread.h"
 #include "itemfile.h"
 #include "resourcehandler.h"

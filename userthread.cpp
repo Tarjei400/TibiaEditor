@@ -1,9 +1,9 @@
-#include <QTemporaryFile>
-#include <QDataStream>
-#include <QTime>
-#include <QFileInfo>
-#include <QProgressDialog>
-#include <QIcon>
+#include <QtCore/QTemporaryFile>
+#include <QtCore/QDataStream>
+#include <QtCore/QTime>
+#include <QtCore/QFileInfo>
+#include <QtGui/QProgressDialog>
+#include <QtGui/QIcon>
 
 #include "formathandler.h"
 

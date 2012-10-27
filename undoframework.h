@@ -1,7 +1,7 @@
 #ifndef UNDOFRAMEWORK_H
 #define UNDOFRAMEWORK_H
 
-#include <QUndoCommand>
+#include <QtGui/QUndoCommand>
 #include "itemfile.h"
 #include "resourcehandler.h"
 

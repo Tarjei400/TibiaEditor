@@ -1,7 +1,7 @@
 #ifndef LIBRARYFILE_H
 #define LIBRARYFILE_H
 
-#include <QDataStream>
+#include <QtCore/QDataStream>
 
 #include "tibiafile.h"
 #include "itemfile.h"

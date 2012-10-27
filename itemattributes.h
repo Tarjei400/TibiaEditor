@@ -1,15 +1,15 @@
 #ifndef ITEMATTRIBUTES_H
 #define ITEMATTRIBUTES_H
 
-#include <QMultiHash>
+#include <QtCore/QMultiHash>
 /*#include <QPair>
 #include <QList>
 #include <QHash>*/
-#include <QLabel>
-#include <QSpinBox>
-#include <QCheckBox>
+#include <QtGui/QLabel>
+#include <QtGui/QSpinBox>
+#include <QtGui/QCheckBox>
 
-#include <QWidget>
+#include <QtGui/QWidget>
 #include "tibiaitem.h"
 #include "ui_itemattributes.h"
 

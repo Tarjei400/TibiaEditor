@@ -1,8 +1,8 @@
 #ifndef TIBIAOBJECT_H
 #define TIBIAOBJECT_H
 
-#include <QMutex>
-#include <QMap>
+#include <QtCore/QMutex>
+#include <QtCore/QMap>
 
 typedef QMap<quint32, quint16> SpriteList;
 

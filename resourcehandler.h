@@ -1,9 +1,9 @@
 #ifndef RESOURCEHANDLER_H
 #define RESOURCEHANDLER_H
 
-#include <QObject>
-#include <QList>
-#include <QHash>
+#include <QtCore/QObject>
+#include <QtCore/QList>
+#include <QtCore/QHash>
 
 #include "tibiaresource.h"
 #include "tibiaitem.h"

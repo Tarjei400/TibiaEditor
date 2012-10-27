@@ -1,7 +1,7 @@
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QEventLoop>
-#include <QProgressDialog>
+#include <QtGui/QFileDialog>
+#include <QtGui/QMessageBox>
+#include <QtCore/QEventLoop>
+#include <QtGui/QProgressDialog>
 
 #include "itemmodel.h"
 #include "spritemodel.h"
