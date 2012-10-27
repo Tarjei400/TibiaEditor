@@ -31,7 +31,7 @@
 #define ITEM_PARENT_EXTERNAL 6
 
 typedef QList<quint8> HeaderList;
-typedef QMap<quint32,quint16> LocalMap;
+typedef QMap<quint32,quint32> LocalMap;
 
 static const char *item_type_strings[] = {
     QT_TR_NOOP( "Item" ),
@@ -138,8 +138,8 @@ public:
 
     quint32 getSpriteCount( bool zfactor = true ) const;
 
-    void setLocalSprite( const quint32 frame, const quint16 spriteId );
-    quint16 getLocalSprite( const quint32 frame ) const;
+    void setLocalSprite( const quint32 frame, const quint32 spriteId );
+    quint32 getLocalSprite( const quint32 frame ) const;
 
     PropertyList getProperties( void ) const {
         return properties;
@@ -393,12 +393,12 @@ public:
         d->setLocalResources( _localMap );
     };
 
-    void setLocalSprite( const quint32 frame, quint16 spriteId ) {
+    void setLocalSprite( const quint32 frame, quint32 spriteId ) {
         QMutex mutex;
         QMutexLocker locker( &mutex );
         d->setLocalSprite( frame, spriteId );
     }
-    quint16 getLocalSprite( const quint32 frame ) const {
+    quint32 getLocalSprite( const quint32 frame ) const {
         QMutex mutex;
         QMutexLocker locker( &mutex );
         return d->getLocalSprite( frame );

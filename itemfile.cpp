@@ -1,7 +1,9 @@
 #include "formathandler.h"
+#include "tibiahandler.h"
 #include "userthread.h"
 #include "itemfile.h"
 
+extern TibiaHandler g_tibiaHandler;
 extern FormatHandler g_formatHandler;
 
 ItemFile::ItemFile( QObject *parent ) : TibiaFile( parent )
@@ -152,7 +154,7 @@ bool ItemFile::createNew( void )
 
 bool ItemFile::load( const QString& name )
 {
-    setFileName( name );
+     setFileName( name );
 
     if( !TibiaFile::exists() ) {
         emit documentError( name, QObject::tr( "File does not exist." ), -1 );
@@ -163,7 +165,7 @@ bool ItemFile::load( const QString& name )
         emit parseError( QObject::tr( "Open Error" ), TibiaFile::error() );
         return false;
     }
-
+    g_tibiaHandler.getOutputWidget()->addLine( QColor( Qt::red ), tr( "File opened lets read first bytes." ) );
     TibiaFile::seek( 0 );
 
     QDataStream in( this );
@@ -173,9 +175,9 @@ bool ItemFile::load( const QString& name )
     in >> m_outfits;
     in >> m_effects;
     in >> m_projectiles;
-
+    g_tibiaHandler.getOutputWidget()->addLine( QColor( Qt::red ), tr( "First bytes read." ) );
     quint32 count = 0;
-
+    emit parseError( QObject::tr( "So far its fine", "" ), TibiaFile::error());
     bool success = false;
     success = loadItemSection( in, m_begin, m_items+1, m_itemList, ITEM_TYPE_ITEM, ITEM_PARENT_ITEMS, count ); // min <= max
     if( success )
@@ -191,12 +193,13 @@ bool ItemFile::load( const QString& name )
         return false;
     }
 
+
     TibiaFile::close();
     m_loaded = true;
     return true;
 }
 
-bool ItemFile::loadItemSection( QDataStream& in, quint16 minimum, quint16 maximum, ItemList& items, quint8 type, quint8 parent, quint32& count )
+bool ItemFile::loadItemSection( QDataStream& in, quint32 minimum, quint32 maximum, ItemList& items, quint8 type, quint8 parent, quint32& count )
 {
     for( int i = minimum; i < maximum; i++ ) {
         ItemData itemData;
@@ -211,12 +214,12 @@ bool ItemFile::loadItemSection( QDataStream& in, quint16 minimum, quint16 maximu
         tibiaItem->setParentType( parent );
         items.push_back( tibiaItem );
         count++;
-    }
 
+    }
     return true;
 }
 
-bool ItemFile::loadItem( DatFormat *datFormat, QDataStream& in, ItemData& itemData, QString& error )
+bool ItemFile::loadItem( DatFormat *datFormat, QDataStream& in, ItemData& itemData, QString& error, bool oldFormat /*=false*/ )
 {
     if(!loadItemProperties( datFormat, in, itemData, error ))
         return false;
@@ -238,9 +241,10 @@ bool ItemFile::loadItem( DatFormat *datFormat, QDataStream& in, ItemData& itemDa
     in >> itemData.animcount;
 
     for( quint32 i = 0; i < itemData.getSpriteCount( datFormat->hasZFactor() ); ++i ) {
-        quint16 spriteId;
-        in >> spriteId;
-        itemData.setLocalSprite( i, spriteId );
+        quint32 spriteId;
+        quint16 spriteId16;
+         (oldFormat ? in >>spriteId16 : in >>spriteId);
+        itemData.setLocalSprite( i, (oldFormat ? spriteId16 : spriteId) );
     }
 
     return true;

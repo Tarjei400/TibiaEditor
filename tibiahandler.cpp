@@ -29,6 +29,7 @@ bool TibiaHandler::loadItemFile( const QString& fileName, DatFormat *datFormat, 
         QObject::connect( m_itemFile, SIGNAL( parseError( QString, QFile::FileError ) ), this, SLOT( onFileError( QString, QFile::FileError ) ) );
         QObject::connect( m_itemFile, SIGNAL( documentError( QString, QString, int ) ), this, SLOT( onDocumentError( QString, QString, int ) ) );
 
+        getOutputWidget()->addLine( QColor( Qt::red ), tr( "Loading begi.. tibiaHandler.cpp" ) );
         if( datFormat || newFile ) { // We dont care about the format if we're creating a file
             m_itemFile->setFormat( datFormat );
             if( ( !newFile && m_itemFile->load( fileName ) ) || ( newFile && m_itemFile->createNew() ) ) {

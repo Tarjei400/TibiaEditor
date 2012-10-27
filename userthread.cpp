@@ -255,7 +255,7 @@ void SpriteThread::run( void )
             return;
         }
 
-        quint16 currentSprite = 1;
+        quint32 currentSprite = 1;
         quint32 offset = 0, now = 0;
 
         setMinimum( currentSprite );

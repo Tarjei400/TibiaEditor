@@ -45,8 +45,8 @@ public:
         return m_datFormat;
     };
 
-    bool loadItemSection( QDataStream& in, quint16 minimum, quint16 maximum, ItemList& items, quint8 type, quint8 parent, quint32& count );
-    static bool loadItem( DatFormat *datFormat, QDataStream& in, ItemData& itemData, QString& error );
+    bool loadItemSection( QDataStream& in, quint32 minimum, quint32 maximum, ItemList& items, quint8 type, quint8 parent, quint32& count );
+    static bool loadItem( DatFormat *datFormat, QDataStream& in, ItemData& itemData, QString& error, bool oldFormat = false );
     static bool loadItemProperties( DatFormat *datFormat, QDataStream& in, ItemData& itemData, QString& error );
 
     bool saveItemSection( QDataStream& out, ItemList& items );

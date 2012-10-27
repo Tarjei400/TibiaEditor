@@ -37,10 +37,10 @@ public:
         return this;
     };
 
-    quint16 getCount( void ) const {
+    quint32 getCount( void ) const {
         return m_count;
     };
-    void setCount( quint16 count ) {
+    void setCount( quint32 count ) {
         m_count = count;
     };
 
@@ -48,11 +48,11 @@ public:
         return m_thread;
     };
 
-    TibiaSprite getSprite( quint16 id );
-    TibiaSprite loadSprite( quint16 spriteId );
+    TibiaSprite getSprite( quint32 id );
+    TibiaSprite loadSprite( quint32 spriteId );
 
 private:
-    quint16 m_count;
+    quint32 m_count;
     UserThread *m_thread;
 
     bool m_loaded;

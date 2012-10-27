@@ -1,42 +1,4 @@
 <RCC>
     <qresource prefix="/TibiaEditor" >
-        <file>Resources/SplashScreen.png</file>
-        <file>Resources/apply.png</file>
-        <file>Resources/closeitem.png</file>
-        <file>Resources/deselect.png</file>
-        <file>Resources/east.png</file>
-        <file>Resources/editcopy.png</file>
-        <file>Resources/editcut.png</file>
-        <file>Resources/editpaste.png</file>
-        <file>Resources/editredo.png</file>
-        <file>Resources/editselectall.png</file>
-        <file>Resources/editundo.png</file>
-        <file>Resources/filedat.png</file>
-        <file>Resources/fileexit.png</file>
-        <file>Resources/fileexport.png</file>
-        <file>Resources/fileimport.png</file>
-        <file>Resources/fileitem.png</file>
-        <file>Resources/filenew.png</file>
-        <file>Resources/fileopen.png</file>
-        <file>Resources/filepic.png</file>
-        <file>Resources/fileproperties.png</file>
-        <file>Resources/filesave.png</file>
-        <file>Resources/filespr.png</file>
-        <file>Resources/itembuilder.png</file>
-        <file>Resources/itemgenerator.png</file>
-        <file>Resources/itemproperties.png</file>
-        <file>Resources/minus.png</file>
-        <file>Resources/north-east.png</file>
-        <file>Resources/north-west.png</file>
-        <file>Resources/north.png</file>
-        <file>Resources/openitem.png</file>
-        <file>Resources/plus.png</file>
-        <file>Resources/preferences.png</file>
-        <file>Resources/search.png</file>
-        <file>Resources/south-east.png</file>
-        <file>Resources/south-west.png</file>
-        <file>Resources/south.png</file>
-        <file>Resources/viewfullscreen.png</file>
-        <file>Resources/west.png</file>
     </qresource>
 </RCC>

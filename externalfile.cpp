@@ -89,7 +89,7 @@ bool ExternalFile::readItem( QDataStream& in, ItemData& itemData, DatFormat *dat
 
     ItemData d_itemData;
     if( datFormat ) {
-        if( !ItemFile::loadItem( datFormat, in, d_itemData, error ) )
+        if( !ItemFile::loadItem( datFormat, in, d_itemData, error, true ) )
             return false;
     }
 

@@ -15,7 +15,7 @@
 class TibiaSprite : public TibiaObject
 {
 public:
-    TibiaSprite( quint16 _id = 0, quint8 _width = 1, quint8 _height = 1 );
+    TibiaSprite( quint32 _id = 0, quint8 _width = 1, quint8 _height = 1 );
     virtual ~TibiaSprite( void );
 
     bool isDummy() const {
@@ -27,7 +27,7 @@ public:
     void setImage( const QImage& );
     static void formatImage( QImage& image );
 
-    quint16 id;
+    quint32 id;
     quint8 width, height, r, g, b;
     QImage image;
     bool dummy;

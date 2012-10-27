@@ -1416,7 +1416,7 @@ void TibiaEditor::onSelectionChanged ( const QItemSelection& selected, const QIt
 
     QItemSelectionModel *selectionModel = qobject_cast<QItemSelectionModel *>( sender() );
     if( selectionModel ) {
-        const QAbstractItemModel *model = dynamic_cast<const QAbstractItemModel *>( selectionModel->model() );
+        const QAbstractItemModel *model = qobject_cast<const QAbstractItemModel *>( selectionModel->model() );
         if( model ) {
             QWidget *widget = qobject_cast<QWidget *>( model->parent() );
             if( widget ) {

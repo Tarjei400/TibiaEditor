@@ -1,7 +1,7 @@
 #include <QtGui/QColor>
 #include "tibiasprite.h"
 
-TibiaSprite::TibiaSprite( quint16 _id, quint8 _width, quint8 _height ) : TibiaObject()
+TibiaSprite::TibiaSprite( quint32 _id, quint8 _width, quint8 _height ) : TibiaObject()
 {
     id = _id;
     width = _width;

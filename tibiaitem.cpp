@@ -24,7 +24,7 @@ void ItemData::setSpriteResource( const quint32 frame, SharedResource& src )
     resourceHash.insert( frame, src );
 }
 
-void ItemData::setLocalSprite( const quint32 frame, const quint16 spriteId )
+void ItemData::setLocalSprite( const quint32 frame, const quint32 spriteId )
 {
     localMap.insert( frame, spriteId );
 }
@@ -34,7 +34,7 @@ SharedResource ItemData::getSpriteResource( const quint32 frame ) const
     return resourceHash.value( frame );
 }
 
-quint16 ItemData::getLocalSprite( const quint32 frame ) const
+quint32 ItemData::getLocalSprite( const quint32 frame ) const
 {
     return localMap.value( frame );
 }
